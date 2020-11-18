@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             xmlns:vm="clr-namespace:App1.ViewModels"
+             Title="Test Drive"
+             x:Class="App1.Views.ListagemView">
+  <!--<ContentPage.BindingContext>
+    <vm:ListagemViewModel></vm:ListagemViewModel>
+  </ContentPage.BindingContext>-->
+  <StackLayout Margin="25">
+    <ActivityIndicator IsRunning="{Binding Aguarde}" IsVisible="{Binding Aguarde}">
+      
+    </ActivityIndicator>
+    <ListView x:Name="listViewVeiculos" ItemsSource="{Binding Veiculos}" SelectedItem="{Binding VeiculoSelecionado}" >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+              <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding Nome}" FontSize="20" VerticalTextAlignment="Center"></Label>
+                <Label Text=" - " VerticalTextAlignment="Center"></Label>
+                <Label Text="{Binding PrecoFormatado}" FontAttributes="Bold" VerticalTextAlignment="Center"></Label>
+              </StackLayout>
+              <!--<Label>
+                <Label.FormattedText>
+                  <FormattedString>
+                    <FormattedString.Spans>
+                      <Span Text="{Binding Nome}" FontSize="20"></Span>
+                      <Span Text=" - "></Span>
+                      <Span Text="{Binding Preco}" FontAttributes="Bold"></Span>
+                    </FormattedString.Spans>
+                  </FormattedString>
+                </Label.FormattedText>  
+              </Label>-->
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+  <!--<Grid VerticalOptions="Start">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition></ColumnDefinition>
+      <ColumnDefinition></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition></RowDefinition>
+      <RowDefinition></RowDefinition>
+      <RowDefinition></RowDefinition>
+    </Grid.RowDefinitions>
+    <Label Grid.Row="0" Grid.Column="0" Text="Azera V6"/>
+    <Label Grid.Row="0" Grid.Column="1" Text="60000"/>
+    <Label Grid.Row="1" Grid.Column="0" Text="Fiesta 2.0"/>
+    <Label Grid.Row="1" Grid.Column="1" Text="50000"/>
+    <Label Grid.Row="2" Grid.Column="0" Text="HB20 S"/>
+    <Label Grid.Row="2" Grid.Column="1" Text="40000"/>
+  </Grid>-->
+  
+</ContentPage>
